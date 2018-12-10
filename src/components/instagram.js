@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 import instagram from '../images/instagram.png';
 
-const Instagram = () => (
-  <img alt="instagram" src={instagram} />
-)
+const Instagram = () => <img alt="instagram" src={instagram} />;
 
-export default Instagram
+export default Instagram;
