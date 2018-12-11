@@ -1,114 +1,116 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
-
-import Logo from '../components/logo';
-import Github from '../components/github';
-import Twitter from '../components/twitter';
-import Instagram from '../components/instagram';
 
 import css from './index.module.css';
+
+import logo from '../images/logo.png';
+import github from '../images/github.png';
+import twiiter from '../images/twitter.png';
+import instagram from '../images/instagram.png';
 
 import '../fonts/runda-regular.ttf';
 import '../fonts/runda-bold.ttf';
 
-const Index = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: 'description',
-              content: 'About Faraz Khan, Software Engineer',
-            },
-            { name: 'keywords', content: 'Product, design, engineering' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <div className={css.root}>
-          <div className={css.header}>
-            <div className={css.logoContainer}>
-              <Logo />
-            </div>
+const Index = () => (
+  <>
+    <Helmet
+      title="Faraz Khan, Software Engineer"
+      meta={[
+        {
+          name: 'description',
+          content: 'About Faraz Khan, Software Engineer',
+        },
+        { name: 'keywords', content: 'Product, Design, Engineering' },
+      ]}
+    >
+      <html lang="en" />
+    </Helmet>
 
-            <div className={css.socialLinks}>
-              <a
-                href="https://github.com/farazcsk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Github />
-              </a>
-              <a
-                href="https://twitter.com/farazKhan404"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Twitter />
-              </a>
-              <a
-                href="https://www.instagram.com/farazkhan4/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Instagram />
-              </a>
-            </div>
+    <div className={css.root}>
+      <div className={css.container}>
+        <header>
+          <div className={css.logoContainer}>
+            <img alt="logo" src={logo} className={css.logo} />
           </div>
 
-          <div className={css.bio}>
-            <p>Hey, I'm Faraz!</p>
-            <p>I focus on the intersection of Engineering and Design.</p>
+          <nav className={css.socialLinks}>
+            <a
+              href="https://github.com/farazcsk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.socialIconContainer}
+            >
+              <img alt="github" src={github} className={css.socialIcon} />
+            </a>
 
-            <p>
-              Over the past three years I have worked for startups such as{' '}
-              <a
-                href="https://www.appearhere.co.uk/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={css.link}
-              >
-                Appear Here
-              </a>{' '}
-              and{' '}
-              <a
-                href="https://pi-top.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={css.link}
-              >
-                pi-top
-              </a>{' '}
-              and right now I am helping the world learn languages joyfully at{' '}
-              <a
-                href="https://www.memrise.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={css.link}
-              >
-                Memrise
-              </a>
-              .
-            </p>
+            <a
+              href="https://twitter.com/farazKhan404"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.socialIconContainer}
+            >
+              <img alt="twitter" src={twiiter} className={css.socialIcon} />
+            </a>
 
-            <p>I love comic books, and I am working on one in my spare time.</p>
-          </div>
-        </div>
-      </>
-    )}
-  />
+            <a
+              href="https://www.instagram.com/farazkhan4/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.socialIconContainer}
+            >
+              <img alt="instagram" src={instagram} className={css.socialIcon} />
+            </a>
+          </nav>
+        </header>
+
+        <main>
+          <p className={css.paragraph}>Hey, I'm Faraz!</p>
+
+          <p className={css.paragraph}>
+            I focus on the intersection of Engineering and Design.
+          </p>
+
+          <p className={css.paragraph}>
+            Over the past three years, I have built products for startups such
+            as{' '}
+            <a
+              href="https://pi-top.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.link}
+            >
+              pi-top
+            </a>{' '}
+            and{' '}
+            <a
+              href="https://www.appearhere.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.link}
+            >
+              Appear Here.
+            </a>{' '}
+            Right now I am helping the world joyfully learn languages at{' '}
+            <a
+              href="https://www.memrise.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.link}
+            >
+              Memrise
+            </a>
+            .
+          </p>
+
+          <p className={css.paragraph}>
+            I love comic books, so I am working on one in my spare time.
+          </p>
+
+          <p className={css.paragraph}>Thanks for stopping by!</p>
+        </main>
+      </div>
+    </div>
+  </>
 );
 
 export default Index;
