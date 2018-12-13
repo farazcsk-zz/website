@@ -4,9 +4,6 @@ import Helmet from 'react-helmet';
 import css from './index.module.css';
 
 import logo from '../images/logo.png';
-import github from '../images/github.png';
-import twiiter from '../images/twitter.png';
-import instagram from '../images/instagram.png';
 
 import '../fonts/runda-regular.ttf';
 import '../fonts/runda-bold.ttf';
@@ -28,46 +25,11 @@ const Index = () => (
 
     <div className={css.root}>
       <div className={css.container}>
-        <header>
-          <div className={css.logoContainer}>
-            <img alt="logo" src={logo} className={css.logo} />
-          </div>
-
-          <nav className={css.socialLinks}>
-            <a
-              href="https://github.com/farazcsk"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={css.socialIconContainer}
-            >
-              <img alt="github" src={github} className={css.socialIcon} />
-            </a>
-
-            <a
-              href="https://twitter.com/farazKhan404"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={css.socialIconContainer}
-            >
-              <img alt="twitter" src={twiiter} className={css.socialIcon} />
-            </a>
-
-            <a
-              href="https://www.instagram.com/farazkhan4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={css.socialIconContainer}
-            >
-              <img alt="instagram" src={instagram} className={css.socialIcon} />
-            </a>
-          </nav>
-        </header>
-
         <main>
-          <p className={css.paragraph}>Hey, I'm Faraz!</p>
+          <p className={css.paragraph}>Hi!</p>
 
           <p className={css.paragraph}>
-            I focus on the intersection of Engineering and Design.
+            My focus is the intersection of Engineering and Design.
           </p>
 
           <p className={css.paragraph}>
@@ -99,15 +61,48 @@ const Index = () => (
             >
               Memrise
             </a>
-            .
+            . Also, I love comic books, so I am working on one in my spare time.
           </p>
 
           <p className={css.paragraph}>
-            I love comic books, so I am working on one in my spare time.
+            You can find me on{' '}
+            <a
+              href="https://github.com/farazcsk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.link}
+            >
+              Github
+            </a>
+            ,{' '}
+            <a
+              href="https://twitter.com/farazKhan404"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.link}
+            >
+              Twitter
+            </a>
+            , and{' '}
+            <a
+              href="https://www.instagram.com/farazkhan4/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={css.link}
+            >
+              Instagram
+            </a>
+            .
           </p>
 
           <p className={css.paragraph}>Thanks for stopping by!</p>
         </main>
+
+        <footer className={css.footer}>
+          <div className={css.logoContainer}>
+            <img alt="logo" src={logo} className={css.logo} />
+          </div>
+        </footer>
       </div>
     </div>
   </>
